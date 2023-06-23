@@ -57,8 +57,8 @@ function tokenize(str) {
     stack = ""
     for (const [ind, i] of str.split("").entries()) {
         //Exceptions
-        if ("+-*/".includes(i) && "+-*/".includes(str[ind-1])) throw "ERROR1"
-        if ("+*/".includes(str[0]) || "+-*/".includes(str.slice(-1))) throw "ERROR2"
+        if ("+-*/".includes(i) && "+-*/".includes(str[ind-1])) throw "ERROR: Repeat operation"
+        if ("+*/".includes(str[0]) || "+-*/".includes(str.slice(-1))) throw "ERROR: Invalid operation"
         if (i == "-" && ind == 0) {
             stack += i
             continue
