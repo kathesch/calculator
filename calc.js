@@ -8,6 +8,7 @@ const utilities = document.querySelectorAll(".utilities *")
 let resultSwitch = false;
 for (i of [...numbers, ...operators, ...utilities]) {
 
+    i.style.touchAction = "none"
     i.style.transition = "1s"
 
     i.addEventListener('pointerdown', e => {
