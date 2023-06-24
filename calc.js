@@ -57,7 +57,7 @@ function tokenize(str) {
     stack = ""
     for (const [ind, i] of str.split("").entries()) {
         //Exceptions
-        if (i == "-" && !"+-*/".includes(str[ind+1])) {
+        if (i == "-" && !"+-*/".includes(str[ind+1]) && "+-*/".includes(str[ind-1])) {
             stack += i
             continue
         }
